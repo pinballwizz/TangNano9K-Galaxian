@@ -1,0 +1,17 @@
+control switch banks
+
+<dip bits="7" ids="Off,On" name="Service"></dip>
+<dip bits="6" ids="Off,On" name="Test"></dip>
+<dip bits="5" ids="Upright,Cocktail" name="Cabinet"></dip>
+<dip bits="14,15" ids="1c/1cr,1c/2cr,2c/1cr,Free Play" name="Coinage" values="0,2,1,3"></dip>
+<dip bits="16,17" ids="7000,10000,12000,20000" name="Bonus Life After"></dip>
+<dip bits="18" ids="2,3" name="Lives"></dip>
+
+Switch bank 0 = 00000000 (bits 0 to 7)
+Switch bank 1 = 00000000 (bits 8 to 15)
+Dip switches  = 00000000 (bits 16 to 23)
+
+default game settings
+W_SW0_DI   => "000" & P1shoot & P1right & P1left & '0' & Coin, (zero is other coin slot)(bit 5 is set zero for upright cabinet)
+W_SW1_DI   => "000" & P2shoot & P2right & P2left & P2start & P1start
+W_DIP_DI   => "00000100" (3 lives and 1 coin per credit)
